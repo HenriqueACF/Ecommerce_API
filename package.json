@@ -2,12 +2,7 @@
   "name": "ecommecer_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "author": "Henrique Assis",
-  "license": "ISC",
+  "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
@@ -18,5 +13,10 @@
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
     "uuid": "^9.0.0"
-  }
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Henrique Assis",
+  "license": "ISC"
 }
