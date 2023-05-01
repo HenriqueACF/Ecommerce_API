@@ -23,6 +23,7 @@ categories
   }]
   - idUser
   - dateCreated
+  - state
   - title
   - category
   - price
