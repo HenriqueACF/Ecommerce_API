@@ -19,26 +19,21 @@ db.on('error', (err) => {
 });
 
 db.once('open', () => {
-    console.log('Conexão bem sucedida com o banco de dados!');
+    console.log('Conexão bem sucedida com o banco de dados');
 });
 
-// Configuração do servidor Express
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Olá, mundo!');
-});
-
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor rodando na porta ${process.env.PORT}`);
-});
-
-//SERVER CONFIG
+//SERVER EXPRESS CONFIG
 const server = express()
 
 server.use(cors())
 server.use(express.json())
 server.use(express.urlencoded({extended: true}))
 server.use(fileupload())
-
 server.use(express.static(__dirname+'/public'))
+server.listen(process.env.PORT, () => {
+    console.log(`Servidor rodando na porta ${process.env.PORT}`);
+});
+
+//ROUTES
+const routes = require('./src/Router/routes')
+server.use('/', routes)
