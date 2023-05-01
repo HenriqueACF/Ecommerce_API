@@ -10,7 +10,6 @@ const mongoose = require('mongoose');
 
 // Configuração do banco de dados MongoDB
 mongoose.connect(
-    //'mongodb+srv://henriqueassis:senha123@ecommercedb.jy5gazv.mongodb.net/test',
     process.env.DATABASE,
     { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
