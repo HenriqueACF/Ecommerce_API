@@ -9,7 +9,7 @@ const modelSchema = new mongoose.Schema({
     token: String
 })
 
-const modelName = 'User'
+const modelName = 'users'
 
 if(mongoose.connection && mongoose.connection.models[modelName]){
     module.exports = mongoose.connection.models[modelName]
