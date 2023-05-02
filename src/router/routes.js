@@ -1,10 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+//CONTROLLER
 const AuthController = require('../controllers/AuthController')
 const AdsController = require('../controllers/AdsController')
 const UserController = require('../controllers/UserController')
+
+//MIDDLEWARE
 const Auth = require('../middlewares/Auth')
+//VALIDATOR
+const AuthValidator = require('../validators/AuthValidator')
 
 router.get('/', (req, res) => {
     res.send('entrou');
@@ -12,7 +17,7 @@ router.get('/', (req, res) => {
 
 // AUTH - CONTROLLER
 router.post('/user/signin', AuthController.signin)
-router.post('/user/signup', AuthController.signup)
+router.post('/user/signup', AuthValidator.signup, AuthController.signup)
 
 // USER - CONTROLLER
 router.get('/states', UserController.getStates)

@@ -5,7 +5,7 @@ const modelSchema = new mongoose.Schema({
     name: String
 })
 
-const modelName = 'State'
+const modelName = 'state'
 
 if(mongoose.connection && mongoose.connection.models[modelName]) {
     module.exports = mongoose.connection.models[modelName]
